@@ -1,0 +1,701 @@
+/* Color Variables */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --accent-color: #FF9800;
+    --dark-color: #2C3E50;
+    --light-color: #F5F5F5;
+    --text-color: #333333;
+    --text-light: #666666;
+    --white: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0 8px 16px var(--shadow);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover a {
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    background-color: #45a049;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(33, 150, 243, 0.8)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(76, 175, 80, 0.7), rgba(33, 150, 243, 0.7));
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    margin-top: 2.5rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Programs Section */
+.programs {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.programs h2 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.program-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+}
+
+.program-card h2 {
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.program-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-right: 1rem;
+}
+
+.read-more::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+}
+
+.read-more:hover::after {
+    transform: translateX(5px);
+}
+
+/* Impact Section */
+.impact {
+    background-color: var(--light-color);
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.impact h2 {
+    color: var(--dark-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.stat p {
+    color: var(--text-light);
+}
+
+/* Locations Section */
+.locations {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.locations h2 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.location-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+.location-card h3 {
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.location-card p {
+    color: var(--text-light);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--dark-color);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.donate-btn {
+    margin-left: 2rem;
+}
+
+.donate-btn a {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.donate-btn a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Ensure content doesn't get hidden under fixed header */
+main {
+    margin-top: 80px; /* Adjust based on header height */
+}
+
+/* Prevent header from changing color on scroll */
+header {
+    transition: none;
+    background-color: var(--dark-color) !important;
+}
+
+/* Add smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 4rem 5%;
+    margin-top: 5rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .programs h2,
+    .impact h2,
+    .locations h2 {
+        font-size: 2rem;
+    }
+
+    .stat h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .program-card {
+        padding: 2rem;
+    }
+
+    .stat {
+        padding: 2rem;
+    }
+
+    .location-card {
+        padding: 1.5rem;
+    }
+}
+
+/* About Section */
+.about-content {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.about-section h2 {
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-section h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+
+/* SDG Section */
+.sdg-section {
+    padding: 6rem 5%;
+    background: var(--light-color);
+}
+
+.sdg-section h2 {
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sdg-section h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sdg-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.sdg-card:hover {
+    transform: translateY(-5px);
+}
+
+.sdg-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sdg-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.sdg-card p {
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.approach-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-5px);
+}
+
+.check-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.approach-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.approach-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.about-section p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Donation Section */
+.donation-section {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.engagement-message {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--light-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.engagement-message h2 {
+    color: var(--dark-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.engagement-message p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.donation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .impact-stats,
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+}
