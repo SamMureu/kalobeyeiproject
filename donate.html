@@ -17,10 +17,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li class="dropdown">
-                    <a href="cradle-to-career.html">Cradle to Career</a>
+                    <a href="program.html">Program</a>
                     <div class="dropdown-content">
-                        <a href="cradle-to-career.html">Early Childhood Education</a>
-                        <a href="cradle-to-career.html">Adult Education</a>
+                        <a href="program.html">Early Childhood Education</a>
+                        <a href="program.html">Adult Education</a>
                     </div>
                 </li>
                 <li><a href="donors.html">Our Donors</a></li>
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" style="background-image: url('image/TUR.jpg'); background-size: cover; background-position: center;">
             <div class="hero-content">
                 <h1>Make a Donation</h1>
                 <p>Your support can change lives</p>
@@ -51,10 +51,10 @@
                     <div class="donation-card">
                         <h3>One-time Donation</h3>
                         <div class="amount-options">
-                            <button class="amount-btn active" data-amount="100">R100</button>
-                            <button class="amount-btn" data-amount="250">R250</button>
-                            <button class="amount-btn" data-amount="500">R500</button>
-                            <button class="amount-btn" data-amount="1000">R1000</button>
+                            <button class="amount-btn active" data-amount="100">KES 100</button>
+                            <button class="amount-btn" data-amount="250">KES 250</button>
+                            <button class="amount-btn" data-amount="500">KES 500</button>
+                            <button class="amount-btn" data-amount="1000">KES 1000</button>
                             <button class="amount-btn" data-amount="0">Custom</button>
                         </div>
                         <div class="custom-amount">
@@ -66,9 +66,9 @@
                         <h3>Monthly Donation</h3>
                         <div class="amount-options">
                             <button class="amount-btn" data-amount="50">R50</button>
-                            <button class="amount-btn" data-amount="100">R100</button>
-                            <button class="amount-btn" data-amount="250">R250</button>
-                            <button class="amount-btn" data-amount="500">R500</button>
+                            <button class="amount-btn" data-amount="100">KES 100</button>
+                            <button class="amount-btn" data-amount="250">KES 250</button>
+                            <button class="amount-btn" data-amount="500">KES 500</button>
                             <button class="amount-btn" data-amount="0">Custom</button>
                         </div>
                         <div class="custom-amount">
@@ -77,31 +77,40 @@
                     </div>
                 </div>
 
-                <div class="donation-form">
-                    <h2>Donor Information</h2>
-                    <form id="donation-form">
-                        <div class="form-group">
-                            <input type="text" id="donor-name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="donor-email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="payment-method" name="payment-method" required>
-                                <option value="">Select Payment Method</option>
-                                <option value="credit-card">Credit Card</option>
-                                <option value="debit-card">Debit Card</option>
-                                <option value="bank-transfer">Bank Transfer</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn">Make Donation</button>
-                    </form>
-                </div>
+                <section class="about-section" style="background-image: url('image/TUR.jpg'); background-size: cover; background-position: center; padding: 4rem 2rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                    <div class="container">
+                        <h1>ABOUT STILL I RISE</h1>
+                        <h2>Empowering Society through education, health, and skills training</h2>
+                        <p>Your support can change lives. Join us in our mission to create a brighter future for South African youth.</p>
+                    </div>
+                </section>
 
-                <div class="tax-deduction">
-                    <h2>Tax Deduction Information</h2>
-                    <p>Still I Rise is a registered Section 18A charity (Section 21 No. 2001/018358/08) and a Public Benefit Organisation (PBO No. 130002290) in South Africa. Donations are tax-deductible.</p>
-                </div>
+                <section class="donation-form-section">
+                    <div class="container">
+                        <div class="donation-form">
+                            <h2>Donor Information</h2>
+                            <form id="donation-form">
+                                <div class="form-group">
+                                    <input type="text" id="donor-name" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="donor-email" name="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <select id="payment-method" name="payment-method" required>
+                                        <option value="">Select Payment Method</option>
+                                        <option value="credit-card">Credit Card</option>
+                                        <option value="debit-card">Debit Card</option>
+                                        <option value="bank-transfer">Bank Transfer</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn">Make Donation</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+               
             </div>
         </section>
     </main>
